@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Tooltip, Typography, Box } from "@mui/material";
 import Avatar from "../../../Shared/components/Avatar";
 import InvitationDecisionButtons from "./InvitationDecisionButtons";
-import  {Connect}  from "react-redux";
+import  {connect}  from "react-redux";
 import { getActions } from "../../../store/actions/friendsActions";
 
 
