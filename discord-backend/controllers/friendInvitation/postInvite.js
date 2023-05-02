@@ -1,5 +1,5 @@
-const User = require("../../Models/user");
-const FriendInvitation = require("../../Models/friendInvitation");
+const User = require("../../models/user");
+const FriendInvitation = require("../../models/friendInvitation");
 const friendsUpdates = require("../../socketHandlers/updates/friends");
 
 const postInvite = async (req, res) => {
@@ -28,7 +28,7 @@ const postInvite = async (req, res) => {
   }
 
   // check if invitation has been already sent
-  const invitationAlreadyReceived = await  FriendInvitation.findOne({
+  const invitationAlreadyReceived = await FriendInvitation.findOne({
     senderId: userId,
     receiverId: targetUser._id,
   });
