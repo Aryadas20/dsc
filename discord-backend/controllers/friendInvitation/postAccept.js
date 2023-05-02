@@ -1,4 +1,4 @@
-const FriendInvitation = require("../../models/friendInvitation");
+const FriendInvitation = require("../../Models/friendInvitation");
 const User = require("../../models/user");
 const friendsUpdates = require("../../socketHandlers/updates/friends");
 
