@@ -1,5 +1,5 @@
 import axios from "axios";
-import { logout } from "./shared/utils/auth";
+import { logout } from "./Shared/utils/auth";
 
 const apiClient = axios.create({
   baseURL: "http://localhost:5002/api",
