@@ -30,6 +30,7 @@ const PendingInvitationsList = ({ pendingFriendsInvitations}) => {
 const mapStoreStatetoProps=({ friends}) => {
   return{
     ...friends,
-  }
-}
+  };
+};
+
 export default connect(mapStoreStatetoProps)(PendingInvitationsList);

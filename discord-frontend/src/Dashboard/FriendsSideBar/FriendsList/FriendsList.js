@@ -2,8 +2,6 @@ import React from "react";
 import { styled } from "@mui/system";
 import FriendsListItem from "./FriendsListItem";
 import { connect } from "react-redux";
- 
-
 
 const MainContainer = styled("div")({
   flexGrow: 1,
@@ -19,10 +17,10 @@ const checkOnlineUsers = (friends = [], onlineUsers = []) => {
   return friends;
 };
 
-const FriendsList = ({friends, OnlineUsers}) => {
+const FriendsList = ({ friends, onlineUsers }) => {
   return (
     <MainContainer>
-      {checkOnlineUsers(friends, OnlineUsers).map((f) => (
+      {checkOnlineUsers(friends, onlineUsers).map((f) => (
         <FriendsListItem
           username={f.username}
           id={f.id}
@@ -34,10 +32,10 @@ const FriendsList = ({friends, OnlineUsers}) => {
   );
 };
 
-const mapStoreStatetoProps = ({friends}) => {
-  return{
+const mapStoreStateToProps = ({ friends }) => {
+  return {
     ...friends,
   };
 };
-export default connect(mapStoreStatetoProps)(FriendsList);
- 
+
+export default connect(mapStoreStateToProps)(FriendsList);
