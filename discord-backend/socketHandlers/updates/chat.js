@@ -11,7 +11,7 @@ const updateChatHistory = async (
     populate: {
       path: "author",
       model: "User",
-      select: "username_id",
+      select: "username _id",
     },
   });
 

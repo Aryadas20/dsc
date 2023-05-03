@@ -9,6 +9,8 @@ import { connect } from "react-redux";
 import { getActions } from "../store/actions/authActions";
 import { setUserDetails } from '../store/actions/authActions'
 import { connectWithSocketServer } from "../realtimeCommunication/socketConnection";
+import Room from "./Room/Room";
+
 
 const Wrapper = styled("div")({
   width: "100%",
@@ -16,7 +18,7 @@ const Wrapper = styled("div")({
   display: "flex",
 });
 
-const Dashboard = () => {
+const Dashboard = ({ setUserDetails, isUserInRoom }) => {
   useEffect(() => {
     const userDetails = localStorage.getItem("user");
 
@@ -30,18 +32,25 @@ const Dashboard = () => {
 
   return (
     <Wrapper>
-       <SideBar/>
+      <SideBar />
       <FriendsSideBar />
       <Messenger />
       <AppBar />
+      {isUserInRoom && <Room />}
     </Wrapper>
   );
 };
- 
+
+const mapStoreStateToProps = ({ room }) => {
+  return {
+    ...room,
+  };
+};
+
 const mapActionsToProps = (dispatch) => {
   return {
     ...getActions(dispatch),
   };
 };
 
-export default connect(null, mapActionsToProps)(Dashboard);
+export default connect(mapStoreStateToProps, mapActionsToProps)(Dashboard);
