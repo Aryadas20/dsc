@@ -1,4 +1,4 @@
-const Conversation = require("../../models/Conversation");
+const Conversation = require("../../models/conversation");
 const serverStore = require("../../serverStore");
 
 const updateChatHistory = async (
@@ -11,7 +11,7 @@ const updateChatHistory = async (
     populate: {
       path: "author",
       model: "User",
-      select: "username _id",
+      select: "username_id",
     },
   });
 
